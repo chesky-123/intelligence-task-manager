@@ -1,4 +1,4 @@
-from db_connection import DB_connection
+from database.db_connection import DB_connection
 
 
 class AgentDB:
@@ -28,7 +28,7 @@ class AgentDB:
             self.cursor.execute("select * from agents")
             self.agents = self.cursor.fetchall()
         except Exception as e:
-            print(e)
+            raise e
         return self.agents
     
     def get_agent_by_id(self,id):

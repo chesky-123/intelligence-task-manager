@@ -1,0 +1,26 @@
+2026-06-18 11:24:52,412 | INFO | POST /create_database
+2026-06-18 11:24:52,454 | INFO | database created successful
+2026-06-18 11:25:11,302 | INFO | GET /all_agents
+2026-06-18 11:25:11,309 | INFO | You managed to get the list
+2026-06-18 11:28:53,979 | INFO | POST /create_agent
+2026-06-18 11:28:53,999 | INFO | agent created successful
+2026-06-18 11:41:18,006 | INFO | GET /agent
+2026-06-18 11:41:18,009 | INFO | id :(1,) exists
+2026-06-18 11:41:47,320 | INFO | PUT /update agent
+2026-06-18 11:41:47,320 | ERROR | 'id'
+2026-06-18 11:42:14,277 | INFO | PUT /deactivate_agent
+2026-06-18 11:42:14,293 | INFO | agent update successful
+2026-06-18 11:42:27,303 | INFO | PUT /deactivate_agent
+2026-06-18 11:42:27,305 | INFO | agent update successful
+2026-06-18 11:42:37,340 | INFO | PUT /deactivate_agent
+2026-06-18 11:42:37,357 | INFO | agent update successful
+2026-06-18 12:00:31,496 | INFO | GET /all_missions
+2026-06-18 12:00:31,523 | ERROR | 1146 (42S02): Table 'Intelligence_db.mission' doesn't exist
+2026-06-18 12:02:31,883 | INFO | GET /all_missions
+2026-06-18 12:02:31,893 | INFO | You managed to get the list
+2026-06-18 12:02:48,510 | INFO | GET /mission
+2026-06-18 12:02:48,512 | INFO | id :(7,) exists
+2026-06-18 12:03:47,091 | INFO | POST /create_mission
+2026-06-18 12:03:47,091 | INFO | missions created successful
+2026-06-18 12:05:13,518 | INFO | POST /create_mission
+2026-06-18 12:05:13,518 | INFO | missions created successful

@@ -1,4 +1,4 @@
-from db_connection import DB_connection
+from database.db_connection import DB_connection
 
 
 class MissionDB:
@@ -13,8 +13,8 @@ class MissionDB:
             self.cursor.execute("""
                                 INSERT INTO missions(title,description,location,difficulty,importance)
                                 VALUES(%s,%s,%s,%s,%s)""",
-                                data["title"],data["description",data["location"],
-                                data["difficulty"],data["importance"]])
+                                data["title"],data["description"],data["location"],
+                                data["difficulty"],data["importance"])
             mission = self.get_mission_by_id(self.get_last_row_id())
             self.connection.commit()
             if self.cursor.rowcount > 0:
@@ -23,24 +23,67 @@ class MissionDB:
         except Exception as e:
             print(e)
             return e
+        
+    def get_all_mission(self):
+        self.cursor.execute("select * from missions")
+        return self.cursor.fetchall()
 
     def get_mission_by_id(self,id):
-        self.mission = None
+        mission = None
         try:
-            self.cursor.execute("select * from mission where id = %s",(id,))
-            self.mission = self.cursor.fetchall()
+            self.cursor.execute("select * from missions where id = %s",(id,))
+            mission = self.cursor.fetchone()
         except Exception as e:
             print(e)
-        return self.mission
+        return mission | None
+    
+    def assign_mission(self,m_id,a_id):
+        self.cursor.execute("""UPDATE missions set assigned_agent_id = %s 
+                            where id = %s
+                            """,(a_id,m_id))
+        self.connection.commit()
+        if self.cursor.rowcount > 0:
+            return True
+        return
+    
+    def update_mission_status(self,id,status):
+        self.cursor.execute("update missions set status = %s where id = %s"
+                            ,(status,id))
+        self.connection.commit()
+        if self.cursor.rowcount > 0:
+            return True
+        return
+    
+    def get_open_missions_by_agent(self,id:int):
+        self.cursor.execute("select * from missions wher status = ASSIGNED or status = IN_PROGRESS")
+        return self.cursor.fetchall()
+    
+    def count_all_missions(self):
+        self.cursor.execute("select count(*) from missions")
+        return self.cursor.fetchall()
+    
+    def count_by_status(self,status):
+        self.cursor.execute("select count(*) from missions where status = %s",(status,))
+        return self.cursor.fetchall()
+    
+    def count_open_missions(self):
+        self.cursor.execute("select count(*) from missions where status = IN_PROGRESS or status = ASSIGNED")
+        return self.cursor.fetchall()
+    
+    def count_critical_missions(self):
+        self.cursor.execute("select count(*) from missions where status = CRITICAL")
+        return self.cursor.fetchall()
+    
+    def get_top_agent(self):
+        self.cursor.execute("")
+    
+
+
 
     def get_last_row_id(self):
         self.cursor.execute("select max(id) as id from missions")
-        id = self.cursor.fetchall()[0]["id"]
+        id = self.cursor.fetchone()[0]["id"]
         return id
 
-
-a = MissionDB()
-
-print(a.create_mission({"title":"title_1","description":"description","location":"TLV","difficulty":2,"importance":1}))
 
 
