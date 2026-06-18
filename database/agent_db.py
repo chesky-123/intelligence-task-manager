@@ -13,7 +13,7 @@ class AgentDB:
             self.cursor.execute("""
                                 insert INTO agents(name ,specialty) VALUES(%s,%s)
                                 """,(data["name"],data["specialty"]))
-            agent = self.cursor.fetchall()
+            agent = self.get_agent_by_id(self.get_last_row_id())
             self.connection.commit()
             if self.cursor.rowcount > 0:
                 return agent
@@ -110,6 +110,10 @@ class AgentDB:
         except Exception as e:
             print(e)
 
+    def get_last_row_id(self):
+        self.cursor.execute("select max(id) as id from agents")
+        id = self.cursor.fetchall()[0]["id"]
+        return id
 
 
 

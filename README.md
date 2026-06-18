@@ -119,3 +119,41 @@
                 py .\agent_db.py
             להרצת missions:
                 py .\mission_db.py
+
+
+    רשימת Endpoints:
+
+       Agents endpoints: 
+
+           Method |  Endpoint |   תיאור   
+        [ POST] | agents/ | יצירת סוכן חדש 
+        [ GET] | agents/ |כל הסוכנים 
+        ]GET[ /agents/{id} ID לפי סוכן
+        ]PUT[ /agents/{id} סוכן עדכון
+        ]PUT[ /agents/{id}/deactivate סוכן השבתת
+        ]GET[ /agents/{id}/performance סוכן ביצועי
+
+    Missions endpoints:
+
+        [ POST] |  missions/ | משימה יצירת
+        [ GET] | missions/ | כל המשימות 
+        ]GET[ | /missions/{id} | ID לפי משימה
+        ]PUT[ | /missions/{id}/assign/{agent_id} | לסוכן שיוך
+        ]PUT[ | /missions/{id}/start | משימה התחלת
+        ]PUT[ | /missions/{id}/complete | בהצלחה סיום
+        ]PUT[ | /missions/{id}/fail | בכישלון סיום
+        ]PUT[ | /missions/{id}/cancel | משימה ביטול
+
+    Reports endpoints:
+
+        [ GET] | summary/reports/ | דוח כללי של המערכת 
+        ]GET[ | /reports/missions-by-status | סטטוס לפי משימות
+        ]GET[ | /reports/top-agent )get_top_agent( | המצטיין הסוכן
+
+
+
+
+
+
+
+
