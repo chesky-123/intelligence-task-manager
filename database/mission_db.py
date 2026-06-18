@@ -35,7 +35,7 @@ class MissionDB:
             mission = self.cursor.fetchone()
         except Exception as e:
             print(e)
-        return mission | None
+        return mission 
     
     def assign_mission(self,m_id,a_id):
         self.cursor.execute("""UPDATE missions set assigned_agent_id = %s 
@@ -43,7 +43,7 @@ class MissionDB:
                             """,(a_id,m_id))
         self.connection.commit()
         if self.cursor.rowcount > 0:
-            return True
+            return "assign mission successful"
         return
     
     def update_mission_status(self,id,status):
@@ -51,7 +51,7 @@ class MissionDB:
                             ,(status,id))
         self.connection.commit()
         if self.cursor.rowcount > 0:
-            return True
+            return "mission status updated"
         return
     
     def get_open_missions_by_agent(self,id:int):

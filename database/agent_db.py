@@ -11,8 +11,8 @@ class AgentDB:
     def create_agent(self,data):
         try:
             self.cursor.execute("""
-                                insert INTO agents(name ,specialty) VALUES(%s,%s)
-                                """,(data["name"],data["specialty"]))
+                                insert INTO agents(name ,specialty,agent_rank) VALUES(%s,%s,%s)
+                                """,(data["name"],data["specialty"],data["agent_rank"]))
             agent = self.get_agent_by_id(self.get_last_row_id())
             self.connection.commit()
             if self.cursor.rowcount > 0:

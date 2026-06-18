@@ -24,3 +24,42 @@
 2026-06-18 12:03:47,091 | INFO | missions created successful
 2026-06-18 12:05:13,518 | INFO | POST /create_mission
 2026-06-18 12:05:13,518 | INFO | missions created successful
+2026-06-18 16:07:22,915 | INFO | PUT /cancel_mission
+2026-06-18 16:07:22,930 | ERROR | unsupported operand type(s) for |: 'dict' and 'NoneType'
+2026-06-18 16:09:47,511 | INFO | GET /mission
+2026-06-18 16:09:47,511 | INFO | starting...
+2026-06-18 16:09:47,515 | ERROR | unsupported operand type(s) for |: 'dict' and 'NoneType'
+2026-06-18 16:11:26,963 | INFO | GET /mission
+2026-06-18 16:11:26,963 | INFO | starting...
+2026-06-18 16:12:18,831 | INFO | GET /mission
+2026-06-18 16:12:18,831 | INFO | starting...
+2026-06-18 16:12:18,842 | INFO | id :(1,) exists
+2026-06-18 16:12:40,736 | INFO | PUT /cancel_mission
+2026-06-18 16:12:40,742 | INFO | start cancel mission
+2026-06-18 16:12:40,791 | INFO | miission canceled
+2026-06-18 16:13:36,460 | INFO | GET /mission
+2026-06-18 16:13:36,460 | INFO | starting...
+2026-06-18 16:13:36,468 | INFO | id :(1,) exists
+2026-06-18 16:13:51,231 | INFO | PUT /assign_mission
+2026-06-18 16:13:51,231 | INFO | assign_mission
+2026-06-18 16:13:51,233 | INFO | assign_mission successful
+2026-06-18 16:30:39,572 | INFO | GET /summary
+2026-06-18 16:30:39,572 | INFO | start get summary
+2026-06-18 16:31:55,704 | INFO | GET /summary
+2026-06-18 16:31:55,704 | INFO | start get summary
+2026-06-18 16:31:55,707 | ERROR | list indices must be integers or slices, not str
+2026-06-18 16:32:45,919 | INFO | GET /summary
+2026-06-18 16:32:45,919 | INFO | start get summary
+2026-06-18 16:35:07,462 | INFO | GET /summary
+2026-06-18 16:35:07,462 | INFO | start get summary
+2026-06-18 16:35:07,485 | ERROR | 'all_missions'
+2026-06-18 16:35:36,864 | INFO | GET /summary
+2026-06-18 16:35:36,864 | INFO | start get summary
+2026-06-18 16:37:03,221 | INFO | GET /summary
+2026-06-18 16:37:03,222 | INFO | start get summary
+2026-06-18 16:37:03,235 | ERROR | MissionDB.get_open_missions_by_agent() missing 1 required positional argument: 'id'
+2026-06-18 16:39:26,200 | INFO | GET /summary
+2026-06-18 16:39:26,201 | INFO | start get summary
+2026-06-18 16:39:26,222 | ERROR | 1054 (42S22): Unknown column 'IN_PROGRESS' in 'where clause'
+2026-06-18 16:39:46,933 | INFO | GET /summary
+2026-06-18 16:39:46,933 | INFO | start get summary
